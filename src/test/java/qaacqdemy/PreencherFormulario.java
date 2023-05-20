@@ -46,7 +46,5 @@ public class PreencherFormulario {
          drive.findElement(By.xpath(habilidade)).click();
          drive.findElement(By.xpath(OpcaoJava)).click();
          drive.findElement(By.xpath(habilidade)).click();
-
-    
 }
 }
