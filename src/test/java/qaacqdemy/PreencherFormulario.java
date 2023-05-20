@@ -2,6 +2,7 @@ package qaacqdemy;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,6 +17,11 @@ public class PreencherFormulario {
         String endereco = "//*[@id='basicBootstrapForm']/div[2]/div/textarea";
         String email = "//*[@id='eid']/input";
         String telefone = "//*[@id='basicBootstrapForm']/div[4]/div/input";
+        String genero = "//*[@id='basicBootstrapForm']/div[5]/div/label[2]/input";
+        String hobbies = "//*[@id='checkbox1']";
+        String habilidade = "//*[@id='basicBootstrapForm']/div[8]/div"; 
+        String OpcaoJava = "//*[@id='Skills']/option[39]";
+        
 
 
         WebDriver drive = new ChromeDriver();
@@ -33,10 +39,13 @@ public class PreencherFormulario {
          drive.findElement(By.xpath(email)).sendKeys("geisa_mb@yahoo.com.br");
          drive.findElement(By.xpath(telefone)).click();
          drive.findElement(By.xpath(telefone)).sendKeys("985265243");
-
-
-
-
+         drive.findElement(By.xpath(genero)).click();
+         drive.findElement(By.xpath(hobbies)).click();
+         JavascriptExecutor js = (JavascriptExecutor) drive;
+         js.executeScript("window.scrollBy(0,400)", "");
+         drive.findElement(By.xpath(habilidade)).click();
+         drive.findElement(By.xpath(OpcaoJava)).click();
+         drive.findElement(By.xpath(habilidade)).click();
 
     
 }
